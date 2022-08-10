@@ -15,10 +15,8 @@ def get_index():
 
 @app.get("/users")
 def display_users():
-    user_list = requests.get(URL).json
-    render_template(
-        "users.html", users=user_list.get("users")
-    )
+    user_list = requests.get(URL).json()
+    return render_template("users.html", users=user_list.get("users"))
 
 @app.get("/users/int:<pk>")
 def display_user_profile(pk):

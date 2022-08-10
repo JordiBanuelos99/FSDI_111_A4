@@ -3,10 +3,8 @@
 {% block title %} Users {% endblock title %}
 
 {% block content %}
-
-
+{% for user in users %}
 <div class="card" style="width: 18rem;">
-    {% for user in users %}
     <div class="card-body">
         <h5 class="card-title">User #{{ user["id"] }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ user["first_name"]}} {{user["last_name"]}}</h6>
@@ -16,5 +14,4 @@
 </div>
 <br />
 {% endfor %}
-
 {% endblock content %}
